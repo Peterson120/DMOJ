@@ -1,1 +1,1 @@
-CCC/15/S3.cpp is union find
+This repository contains all my old competitive programming code from High School. It has algorithms such as Union Find, Fast Fourier Transforms, Sieve of Erasthones, Graph Theory, and Dynamic Programming
