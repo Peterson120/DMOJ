@@ -1,20 +1,29 @@
-#include <cstdio>
-#include <cstring>
-#include <stack>
-char str1[1000001], str2[37];
-int arr1[1000000], arr2[1000000], len1, len2;
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
 int main() {
-	scanf("%s%s", str1, str2);
-	len1 = strlen(str1), len2 = strlen(str2);
-	if (len1 == 1) {
-		for (int i = 0; i < len1; i++) {
-			if (str1[i] == str2[0]) {
-				arr1[i]++; arr2[i]++;
-			}
-		}
-	} else {
-		std::stack<int> s;
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    string a, b;
+    cin >> a >> b;
+	string s;
+    int n = b.length();
+    for (char c : a) {
+        s.push_back(c);
+		if (s.size() >= n) {
+			bool t = true;
+			for (int i = 0; i < n; ++i)
+				if (s[s.size()-n+i] != b[i]) {
+					t = false;
+					break;
+				}
+			if (t) for (int i = 0; i < n; ++i) s.pop_back();		
+		}	
 	}
-	if (1) printf("FRULA\n");
-	else printf("%s\n", str1);
+	if (!s.size()) cout << "FRULA\n";
+	else cout << s << endl;
+    return 0;
 }
